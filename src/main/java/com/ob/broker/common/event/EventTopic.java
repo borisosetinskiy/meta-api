@@ -1,0 +1,6 @@
+package com.ob.broker.common.event;
+
+public enum EventTopic {
+    ALL, ERROR, CONNECT, PRICE, LOCAl_ORDER, ORDER, ORDER_REQUEST, REQUEST, CHART, ACCOUNT, ACCOUNT_UPDATE
+    , PING_PONG, LOAD, SUBSCRIBE, CUSTOM;
+}
