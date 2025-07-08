@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <logger name="javax.activation" level="ERROR"/>
+    <logger name="javax.management.remote" level="ERROR"/>
+    <logger name="javax.xml.bind" level="ERROR"/>
+    <logger name="ch.qos.logback" level="ERROR"/>
+    <logger name="com.hazelcast" level="ERROR"/>
+    <logger name="com.sun" level="ERROR"/>
+    <logger name="com.zaxxer" level="ERROR"/>
+    <logger name="org.apache" level="ERROR"/>
+    <logger name="org.apache.catalina.startup.DigesterFactory" level="OFF"/>
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.springframework.web" level="ERROR"/>
+    <logger name="org.xnio" level="ERROR"/>
+    <logger name="io.swagger" level="ERROR"/>
+    <logger name="sun.rmi" level="ERROR"/>
+    <logger name="org.springdoc" level="ERROR"/>
+    <logger name="sun.net.www" level="ERROR"/>
+    <logger name="sun.rmi.transport" level="ERROR"/>
+    <logger name="_org.springframework.web.servlet.HandlerMapping.Mappings" level="ERROR"/>
+    <logger name="reactor.util" level="ERROR"/>
+    <logger name="reactor.netty" level="ERROR"/>
+    <logger name="io.netty" level="ERROR"/>
+    <logger name="jdk.event.security" level="ERROR"/>
+    <logger name="io.micrometer" level="ERROR"/>
+    <logger name="org.jboss" level="ERROR"/>
+    <logger name="http" level="ERROR"/>
+    <logger name="reactor.kafka" level="ERROR"/>
+    <logger name="i.g.n.s.i.g.netty.NettyClientHandler" level="ERROR"/>
+
+    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>{"level":"%-5p","dateTime":"%date{yyyy-MM-dd HH:mm:ss.SSSZ}","env":"%X{env}","app":"%X{app}","appId":"%X{appId}","logType":"%X{logType}","hostAddress":"%X{hostAddress}","accountId":"%X{accountId}","brokerId":"%X{brokerId}", %msg} %n</pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+
+
+</configuration>
